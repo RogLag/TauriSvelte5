@@ -8,12 +8,12 @@ Template prêt à l'emploi pour développer des applications de bureau performan
 
 ## ✨ Fonctionnalités
 
-- **🦀 Tauri** - Framework permettant de créer des applications de bureau légères en utilisant des technologies web
-- **⚡ Svelte 5** - Framework JavaScript réactif avec les nouvelles fonctionnalités "runes"
-- **💨 TailwindCSS 4** - Framework CSS utilitaire pour un design rapide et efficace
-- **🎨 shadcn/svelte** - Composants UI réutilisables et accessibles
-- **📝 TypeScript** - Support complet du typage statique
-- **📦 Vite** - Build tooling ultra rapide
+- [**🦀 Tauri**](https://tauri.app/) - Framework permettant de créer des applications de bureau légères en utilisant des technologies web
+- [**⚡ Svelte 5**](https://svelte.dev/) - Framework JavaScript réactif avec les nouvelles fonctionnalités "runes"
+- [**💨 TailwindCSS 4**](https://tailwindcss.com/) - Framework CSS utilitaire pour un design rapide et efficace
+- [**🎨 shadcn/svelte**](https://next.shadcn-svelte.com/) - Composants UI réutilisables et accessibles
+- [**📝 TypeScript**](https://www.typescriptlang.org/) - Support complet du typage statique
+- [**📦 Vite**](https://vite.dev/) - Build tooling ultra rapide
 
 ## 🛠️ Prérequis
 
