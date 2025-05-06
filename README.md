@@ -31,7 +31,7 @@ Template prêt à l'emploi pour développer des applications de bureau performan
 npm install
 
 # Avec pnpm
-pnpm install
+pnpm i
 
 # Avec yarn
 yarn
@@ -43,13 +43,13 @@ Lancez l'application en mode développement:
 
 ```bash
 # Avec npm
-npm run dev
+npm run tauri dev
 
 # Avec pnpm
-pnpm dev
+pnpm tauri dev
 
 # Avec yarn
-yarn dev
+yarn tauri dev
 ```
 
 ## 🏗️ Build
@@ -58,13 +58,13 @@ Créez une version de production de votre application:
 
 ```bash
 # Avec npm
-npm run build
+npm run tauri build
 
 # Avec pnpm
-pnpm build
+pnpm tauri build
 
 # Avec yarn
-yarn build
+yarn tauri build
 ```
 
 Les fichiers compilés se trouveront dans le dossier `src-tauri/target/release`.
@@ -74,6 +74,7 @@ Les fichiers compilés se trouveront dans le dossier `src-tauri/target/release`.
 ```
 ├── src/                  # Code Svelte
 │   ├── lib/              # Composants et utilitaires
+│   │   ├── components/   # Vos composants
 │   │   ├── shadcn/       # Composants shadcn/svelte
 │   └── routes/           # Pages de l'application
 ├── src-tauri/            # Code Rust pour Tauri
@@ -88,7 +89,6 @@ Les fichiers compilés se trouveront dans le dossier `src-tauri/target/release`.
 Vous pouvez personnaliser l'application en modifiant:
 
 - `src-tauri/tauri.conf.json` pour la configuration de Tauri
-- `tailwind.config.js` pour la configuration de TailwindCSS
 - `components.json` pour la configuration de shadcn
 
 ## 📝 Licence
