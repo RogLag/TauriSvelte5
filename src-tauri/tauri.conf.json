@@ -7,7 +7,7 @@
     "distDir": "../build"
   },
   "package": {
-    "productName": "tauritest",
+    "productName": "app_tauri",
     "version": "0.1.0"
   },
   "tauri": {
