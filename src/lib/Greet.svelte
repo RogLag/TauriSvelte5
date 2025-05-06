@@ -6,8 +6,8 @@
   let name = $state('');
   let greetMsg = $state('');
 
-  async function greet() {
-    greetMsg = await invoke('greet', { name })
+  function greet() {
+    greetMsg = name
   }
 </script>
 
