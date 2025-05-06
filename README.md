@@ -17,9 +17,9 @@ Template prêt à l'emploi pour développer des applications de bureau performan
 
 ## 🛠️ Prérequis
 
-- [Node.js](https://nodejs.org/) (v18 ou plus récent)
+- [Node.js](https://nodejs.org/) (v20 ou plus récent)
 - [Rust](https://www.rust-lang.org/tools/install)
-- Dépendances Tauri: [Guide d'installation](https://tauri.app/v1/guides/getting-started/prerequisites)
+- Dépendances Tauri: [Guide d'installation](https://tauri.app/start/prerequisites/)
 
 ## 🚀 Pour commencer
 
@@ -90,7 +90,3 @@ Vous pouvez personnaliser l'application en modifiant:
 
 - `src-tauri/tauri.conf.json` pour la configuration de Tauri
 - `components.json` pour la configuration de shadcn
-
-## 📝 Licence
-
-[MIT](LICENSE)
