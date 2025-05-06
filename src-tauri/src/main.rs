@@ -7,8 +7,3 @@ fn main() {
     .run(tauri::generate_context!())
     .expect("error while running tauri application");
 }
-
-#[tauri::command]
-fn greet(name: &str) -> String {
-   format!("Hello, {}!", name)
-}
