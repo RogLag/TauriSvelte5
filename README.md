@@ -37,6 +37,19 @@ pnpm i
 yarn
 ```
 
+3. Copiez le fichier d'exemple d'environnement :
+
+```bash
+# Sous Linux/macOS
+cp .env.example .env
+
+# Sous Windows (cmd)
+copy .env.example .env
+
+# Sous Windows (PowerShell)
+Copy-Item .env.example .env
+```
+
 ## 💻 Développement
 
 Lancez l'application en mode développement:
