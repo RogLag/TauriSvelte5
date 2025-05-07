@@ -1,0 +1,6 @@
+{
+    "identifier": "default-capability",
+    "permissions": [
+        "positioner:default"
+    ]
+}
