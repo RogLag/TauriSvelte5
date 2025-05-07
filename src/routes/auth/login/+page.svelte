@@ -26,18 +26,25 @@ async function login(event: Event) {
 }
 </script>
 
-<div class="flex flex-col items-center justify-center min-h-screen gap-4">
-  <h1 class="text-2xl font-bold">Connexion</h1>
-  <form class="flex flex-col gap-2 w-80" on:submit={login}>
-    <Input type="email" placeholder="Email" bind:value={email} required />
-    <Input type="password" placeholder="Mot de passe" bind:value={password} required />
-    {#if error}
-      <div class="text-red-500">{error}</div>
-    {/if}
-    <Button type="submit" variant="default" disabled={loading}>
-      {#if loading}Connexion...{:else}Connexion{/if}
-    </Button>
-    <a href="/auth/forgot-password" class="text-sm text-blue-600 hover:underline">Mot de passe oublié ?</a>
-    <a href="/auth/register" class="text-sm text-blue-600 hover:underline">Créer un compte</a>
-  </form>
+<div class="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-100 via-white to-purple-100">
+  <div class="bg-white/80 rounded-2xl shadow-xl p-8 flex flex-col items-center max-w-md w-full">
+    <h1 class="text-3xl font-bold mb-2 text-primary">Connexion</h1>
+    <form class="flex flex-col gap-3 w-80" on:submit={login}>
+      <Input type="email" placeholder="Email" bind:value={email} required />
+      <Input type="password" placeholder="Mot de passe" bind:value={password} required />
+      {#if error}
+        <div class="text-red-500 text-sm">{error}</div>
+      {/if}
+      <Button type="submit" variant="default" class="w-full mt-2" disabled={loading}>
+        {#if loading}Connexion...{:else}Connexion{/if}
+      </Button>
+      <div class="flex flex-col gap-1 mt-2 w-full">
+        <div class="flex justify-between">
+          <Button variant="link" href="/auth/forgot-password" class="text-xs hover:underline px-0">Mot de passe oublié ?</Button>
+          <Button variant="link" href="/auth/register" class="text-xs hover:underline px-0">Créer un compte</Button>
+        </div>
+        <Button variant="ghost" href="/" class="text-xs text-gray-500 hover:underline text-center mt-2">← Retour à l'accueil</Button>
+      </div>
+    </form>
+  </div>
 </div>

@@ -23,19 +23,23 @@ async function forgotPasswordHandler() {
 }
 </script>
 
-<div class="flex flex-col items-center justify-center min-h-screen gap-4">
-  <h1 class="text-2xl font-bold">Mot de passe oublié</h1>
-  <form class="flex flex-col gap-2 w-80" on:submit|preventDefault={forgotPasswordHandler}>
-    <Input type="email" placeholder="Email" bind:value={email} required />
-    {#if error}
-      <div class="text-red-500">{error}</div>
-    {/if}
-    {#if message}
-      <div class="text-green-600">{message}</div>
-    {/if}
-    <Button type="submit" variant="default" disabled={loading}>
-      {#if loading}Envoi...{:else}Envoyer{/if}
-    </Button>
-    <a href="/auth/login" class="text-sm text-blue-600 hover:underline">Retour à la connexion</a>
-  </form>
+<div class="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-100 via-white to-purple-100">
+  <div class="bg-white/80 rounded-2xl shadow-xl p-8 flex flex-col items-center max-w-md w-full">
+    <h1 class="text-3xl font-bold mb-2 text-primary">Mot de passe oublié</h1>
+    <form class="flex flex-col gap-3 w-80" on:submit|preventDefault={forgotPasswordHandler}>
+      <Input type="email" placeholder="Email" bind:value={email} required />
+      {#if error}
+        <div class="text-red-500 text-sm">{error}</div>
+      {/if}
+      {#if message}
+        <div class="text-green-600 text-sm">{message}</div>
+      {/if}
+      <Button type="submit" variant="default" class="w-full mt-2" disabled={loading}>
+        {#if loading}Envoi...{:else}Envoyer{/if}
+      </Button>
+      <div class="flex justify-between mt-2 w-full">
+        <Button variant="link" href="/auth/login" class="text-xs hover:underline px-0">Retour à la connexion</Button>
+      </div>
+    </form>
+  </div>
 </div>
