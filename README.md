@@ -84,6 +84,37 @@ Les fichiers compilés se trouveront dans le dossier `src-tauri/target/release`.
 └── ...                   # Fichiers de configuration
 ```
 
+
+## 🔐 Authentification
+
+Ce template propose plusieurs stratégies d'authentification prêtes à l'emploi côté front, avec une intégration par défaut pour Laravel Sanctum.
+
+### Fonctionnement (Sanctum)
+
+- Les pages `/auth/login`, `/auth/register`, `/auth/forgot-password` et `/auth/reset-password` utilisent les fonctions de `$lib/auth/sanctum`.
+- Les appels se font via axios, avec gestion automatique du cookie CSRF (`/sanctum/csrf-cookie`) et des credentials (`withCredentials: true`).
+- **Il est nécessaire de mettre en place un backend compatible** : le front ne fonctionne pas sans un serveur qui expose les routes suivantes :
+  - `GET /sanctum/csrf-cookie` (obligatoire avant tout POST d'auth)
+  - `POST /api/login` (connexion)
+  - `POST /api/register` (inscription)
+  - `POST /api/forgot-password` (mot de passe oublié)
+  - `POST /api/reset-password` (réinitialisation du mot de passe)
+  - `GET /api/user` (infos utilisateur, nécessite le cookie de session ou un token)
+- Le token retourné est stocké dans le localStorage côté front.
+- Le front gère la redirection et l'affichage des erreurs.
+
+### Exemple de configuration backend (Laravel)
+
+1. Installer Sanctum et configurer les CORS pour autoriser l'origine de l'app Tauri/Svelte.
+2. S'assurer que les routes API d'auth sont bien exposées (voir [doc Sanctum](https://laravel.com/docs/11.x/sanctum#spa-authentication)).
+3. Adapter l'URL du backend dans `.env` (`PUBLIC_BACKEND_URL`).
+
+### Autres stratégies
+
+Le dossier `$lib/auth/` propose aussi des intégrations pour JWT, Passport, OAuth, etc. Pour changer de stratégie, modifiez simplement l'import dans vos pages d'authentification.
+
+> **Astuce** : Consultez le code de `$lib/auth/sanctum.ts` et des pages `/auth/login`, `/auth/register`, `/auth/forgot-password` et `/auth/reset-password` pour voir un exemple complet.
+
 ## 🔧 Personnalisation
 
 Vous pouvez personnaliser l'application en modifiant:
