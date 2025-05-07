@@ -97,6 +97,20 @@ Les fichiers compilés se trouveront dans le dossier `src-tauri/target/release`.
 └── ...                   # Fichiers de configuration
 ```
 
+## 🧩 Développement
+
+### 🔔 Notifications système
+
+Cette template intègre le plugin Tauri `@tauri-apps/plugin-notification` pour les notifications système.
+
+**Important pour Windows :** Par défaut, lors du développement ou depuis un exécutable non installé, les notifications apparaissent comme provenant de Windows PowerShell, ce qui n'est pas idéal pour l'expérience utilisateur.
+
+Pour que les notifications s'affichent correctement avec le nom et l'icône de votre application :
+1. Créez un build de production avec `pnpm tauri build`
+2. Installez l'application à l'aide du fichier `.msi` généré dans `src-tauri/target/release/bundle/msi/`
+3. Lancez l'application installée
+
+Cette installation permet à Windows d'associer correctement l'identité de l'application aux notifications lors de leur déclenchement.
 
 ## 🔐 Authentification
 
