@@ -94,7 +94,7 @@ Ce template propose plusieurs stratégies d'authentification prêtes à l'emploi
 - Les pages `/auth/login`, `/auth/register`, `/auth/forgot-password` et `/auth/reset-password` utilisent les fonctions de `$lib/auth/sanctum`.
 - Les appels se font via axios, avec gestion automatique du cookie CSRF (`/sanctum/csrf-cookie`) et des credentials (`withCredentials: true`).
 - **Il est nécessaire de mettre en place un backend compatible** : le front ne fonctionne pas sans un serveur qui expose les routes suivantes :
-  - `GET /sanctum/csrf-cookie` (obligatoire avant tout POST d'auth)
+  - `GET /sanctum/csrf-cookie` (obligatoire avant tout POST d'auth, uniquement pour un backend Laravel sanctum)
   - `POST /api/login` (connexion)
   - `POST /api/register` (inscription)
   - `POST /api/forgot-password` (mot de passe oublié)
@@ -111,9 +111,9 @@ Ce template propose plusieurs stratégies d'authentification prêtes à l'emploi
 
 ### Autres stratégies
 
-Le dossier `$lib/auth/` propose aussi des intégrations pour JWT, Passport, OAuth, etc. Pour changer de stratégie, modifiez simplement l'import dans vos pages d'authentification.
+Le dossier `src/lib/auth/` propose aussi des intégrations pour JWT, Passport, OAuth, etc. Pour changer de stratégie, modifiez simplement l'import dans vos pages d'authentification.
 
-> **Astuce** : Consultez le code de `$lib/auth/sanctum.ts` et des pages `/auth/login`, `/auth/register`, `/auth/forgot-password` et `/auth/reset-password` pour voir un exemple complet.
+> **Astuce** : Consultez le code de `src/lib/auth/sanctum.ts` et des pages `/auth/login`, `/auth/register`, `/auth/forgot-password` et `/auth/reset-password` pour voir un exemple complet.
 
 ## 🔧 Personnalisation
 
